@@ -1,0 +1,7 @@
+-- 문제: 없어진 기록 찾기
+-- 핵심 배운 점: RIGHT JOIN을 통해 입양 기록(OUTS)은 있지만 보호소 기록(INS)이 없는 데이터를 추출하고, IS NULL로 결측치를 필터링하는 법
+SELECT O.ANIMAL_ID, O.NAME
+FROM ANIMAL_INS I
+RIGHT JOIN ANIMAL_OUTS O ON I.ANIMAL_ID = O.ANIMAL_ID
+WHERE I.ANIMAL_ID IS NULL
+ORDER BY O.ANIMAL_ID;
