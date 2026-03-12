@@ -1,0 +1,7 @@
+-- 문제: 있었는데요 없었습니다
+-- 핵심 배운 점: 두 테이블을 JOIN한 후, 서로 다른 테이블의 DATETIME 컬럼 값을 비교하여 조건에 맞는 행을 찾아내는 로직
+SELECT I.ANIMAL_ID, I.NAME
+FROM ANIMAL_INS I
+JOIN ANIMAL_OUTS O ON I.ANIMAL_ID = O.ANIMAL_ID
+WHERE I.DATETIME > O.DATETIME
+ORDER BY I.DATETIME ASC;
